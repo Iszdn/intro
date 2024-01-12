@@ -1,0 +1,23 @@
+#navbar{
+    .nav{
+        justify-content: space-between;
+        display: flex;
+        .logo{
+          a{
+
+          }  
+        }
+        .navigations{
+            ul{
+                display: flex;
+               gap: 20px;
+                li{
+
+                    a{
+
+                    }
+                }
+            }
+        }
+    }
+}

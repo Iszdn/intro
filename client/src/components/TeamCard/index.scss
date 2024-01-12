@@ -1,0 +1,43 @@
+.team-card{
+    overflow: hidden;
+  .img{
+    position: relative;
+.icons{
+    height: 100%;
+    background-color: var(--main--color);
+    width: 18%;
+    z-index: 3;
+    position: absolute;
+    left: -30%;
+    top: 0;
+
+    .sosials{
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        i{
+            cursor: pointer;
+        }
+    }
+}
+  } 
+  .info{
+    padding: 16px;
+    h3{
+font-size: 19px;
+    }
+    p{
+       color: gray;
+       font-size: 13px; 
+       font-weight: 300;
+    }
+  } 
+  &:hover .icons{
+left: 0;
+transition: .5s;
+  }
+}
