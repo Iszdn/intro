@@ -14,7 +14,10 @@ getId()
 }, [])
 
   return (
-    <div>
+    <>
+     <Helmet>
+    <title>Home</title>
+   </Helmet>
 {
     data && 
     <ul>
@@ -23,7 +26,7 @@ getId()
         <li>{data.description}</li>
     </ul>
 }
-    </div>
+    </>
   )
 }
 

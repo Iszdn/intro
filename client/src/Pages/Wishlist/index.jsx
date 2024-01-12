@@ -1,11 +1,16 @@
 import React, { useContext } from 'react'
 import { WishlistContext } from '../../context/WishlistContext'
+import { Helmet } from 'react-helmet-async'
 
 const WishlistPage = () => {
     const {wish,deleteWish}=useContext(WishlistContext)
 
   return (
-    <div>
+    <>
+     <Helmet>
+    <title>Wishlist</title>
+   </Helmet>
+      <div>
         <h3>wishlist</h3>
 {
     wish && wish.map(x=>
@@ -18,6 +23,8 @@ const WishlistPage = () => {
     )
 }
     </div>
+    </>
+  
   )
 }
 
