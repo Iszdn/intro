@@ -6,7 +6,6 @@ const FormAdd = ({getData}) => {
 async function addIntro(values) {
     const res=await axios.post("http://localhost:8000/",values)
     getData()
-
 }
 
 

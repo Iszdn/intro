@@ -26,7 +26,7 @@ const AddPage = () => {
     return (
         <>
             <Helmet>
-                <title>Home</title>
+                <title>Add</title>
             </Helmet>
             <div className='table'>
 
@@ -34,6 +34,7 @@ const AddPage = () => {
                 <div className="filter">
                     <button onClick={()=>setProperty({name:"title",asc:true})}>a-z</button>
                     <button onClick={()=>setProperty({name:"title",asc:false})}>z-a</button>
+                    <button onClick={()=>setProperty({name:"title",asc:null})}>default</button>
                     <input type="search" value={search} onChange={(e) => setsearch(e.target.value)} />
                 </div>
                 <div className="overflow-x-auto">
@@ -49,14 +50,14 @@ const AddPage = () => {
                         <tbody>
 
                             {
-                                data && [...data]
+                                data && data
                                     .filter(x => x.title.toLowerCase().includes(search.toLowerCase()))
                                   .sort((a,b)=>{
                                     if (property && property.asc === true) {
-                                      return  (a[property.name] > b[property.name]) ? 1 : ((b[property.name] > a[property.name]) ? -1 : 0);
+                                      return  (a[property.name].toLowerCase() > b[property.name].toLowerCase()) ? 1 : ((b[property.name].toLowerCase() > a[property.name].toLowerCase()) ? -1 : 0);
                                     }
-                                    else  if (property && property.asc === false) {
-                                        return  (a[property.name] < b[property.name]) ? 1 : ((b[property.name] < a[property.name]) ? -1 : 0)
+                                    else if (property && property.asc === false) {
+                                        return  (a[property.name].toLowerCase() < b[property.name].toLowerCase()) ? 1 : ((b[property.name].toLowerCase() < a[property.name].toLowerCase()) ? -1 : 0)
                                       }
                                       else{
                                         return 0;

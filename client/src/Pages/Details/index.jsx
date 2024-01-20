@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from "axios"
+import { Helmet } from 'react-helmet-async'
 const DetailsPage = () => {
 const [data, setData] = useState(null)
     const {id}=useParams()
@@ -16,7 +17,7 @@ getId()
   return (
     <>
      <Helmet>
-    <title>Home</title>
+    <title>Details</title>
    </Helmet>
 {
     data && 
